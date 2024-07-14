@@ -29,7 +29,10 @@ public class IssueRepository {
 				.setSerializationInclusion(JsonInclude.Include.NON_NULL);
 	}
 
-	public List<ProductCategoryBean> getIssues(Session session) throws JsonProcessingException {
+	public HashMap<String, Object> getIssues(Session session) throws JsonProcessingException {
+
+		HashMap<String, Object> resultMap = new HashMap<>();
+
 		String sql = "SELECT "
 				+ "tc.oid AS tc_oid, tc.catCode AS tc_code, tc.catName AS tc_name, tc.activeStatus AS tc_status, tc.createDate AS tc_createDate, tc.modifiedBy AS tc_createdBy, "
 				+ "pc.oid AS pc_oid, pc.catCode AS pc_code, pc.catName AS pc_name, pc.activeStatus AS pc_status, pc.createDate AS pc_createDate, pc.modifiedBy AS pc_createdBy, "
@@ -105,7 +108,15 @@ public class IssueRepository {
 			}
 		}
 
-		return new ArrayList<>(categoryMap.values());
+		List<ProductCategoryBean> topCategoriesList = new ArrayList<ProductCategoryBean>(categoryMap.values());
+
+		if (topCategoriesList == null || topCategoriesList.size() == 0) {
+			resultMap.put("topCategories", null);
+		}
+
+		resultMap.put("topCategories", topCategoriesList);
+
+		return resultMap;
 	}
 
 }

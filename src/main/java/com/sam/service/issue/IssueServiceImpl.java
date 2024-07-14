@@ -35,19 +35,7 @@ public class IssueServiceImpl implements IssueService {
 
 			session = SessionFactoryUtil.getInstance("issues").openSession();
 
-			List<ProductCategoryBean> resultList = repository.getIssues(session);
-
-			System.err.println(resultList);
-
-			if (resultList == null || resultList.size() == 0) {
-
-				responseBean.setResult(new HashMap<String, Object>());
-
-			} else {
-
-				responseBean.setResult(resultList);
-
-			}
+			responseBean.setResult(repository.getIssues(session));
 
 			return responseBean;
 
