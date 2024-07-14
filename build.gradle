@@ -1,0 +1,38 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.1'
+	id 'io.spring.dependency-management' version '1.1.5'
+}
+
+group = 'com.sam'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core
+	implementation 'org.hibernate.orm:hibernate-core:6.4.4.Final'
+	// https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa
+	// implementation 'org.springframework.data:spring-data-jpa:3.3.1'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.2'
+	implementation 'com.mysql:mysql-connector-j:8.4.0'
+	implementation 'commons-beanutils:commons-beanutils:1.9.4'
+	compileOnly 'org.projectlombok:lombok:1.18.34'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	
+	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

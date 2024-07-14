@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+		<property name="hibernate.c3p0.idle_test_period">3000</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.timeout">300</property>
+		<property name="hibernate.check_nullability">false</property>
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+
+		<!-- <property name="hibernate.connection.password">jotilpassword</property> 
+			<property name="hibernate.connection.url">jdbc:mysql://swosti.net:3306/mcc</property> 
+			<property name="hibernate.connection.username">root</property> <property 
+			name="hibernate.default_catalog">mcc</property> -->
+
+		<!-- <property name="hibernate.connection.password">dsk321</property> <property 
+			name="hibernate.connection.url">jdbc:mysql://dskdemofinal.c6z7q4jhzoc7.ap-south-1.rds.amazonaws.com:3306/dsk</property> 
+			<property name="hibernate.connection.username">dsk</property> <property name="hibernate.default_catalog">dsk</property> -->
+
+
+		<!-- <property name="hibernate.default_catalog">demo</property> <property 
+			name="hibernate.connection.username">demo</property> <property name="hibernate.connection.password">demo321</property> 
+			<property name="hibernate.connection.url">jdbc:mysql://swostidb.c6z7q4jhzoc7.ap-south-1.rds.amazonaws.com:3306/demo</property> -->
+
+		<property name="hibernate.default_catalog">sbk</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">Samrat@007</property>
+		<property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/sbk?useLegacyDatetimeCode=false&amp;sessionVariables=sql_mode=''&amp;UseUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=Asia/Dhaka&amp;useSSL=false</property>
+
+
+		<!-- 2406:da1a:94:9241:2503:c013:feb8:9345 <property name="hibernate.connection.password">sbk4321</property> 
+			<property name="hibernate.connection.url">jdbc:mysql://13.232.39.1:3306/sbk</property> 
+			<property name="hibernate.connection.username">sbk</property> <property name="hibernate.default_catalog">sbk</property> -->
+
+
+		<!-- <property name="hibernate.default_catalog">demo</property> <property 
+			name="hibernate.connection.username">joyonta</property> <property name="hibernate.connection.password">123456</property> 
+			<property name="hibernate.connection.url">jdbc:mysql://172.16.2.101:3306/demo</property> -->
+
+		<property name="backup.path">/usr/dbBackup</property>
+		<property name="auto.dayend.hhmm">06:50</property>
+
+		<!-- Tesing for coop demo purpose delete after testing -->
+		<!-- <property name="robi.user">coop</property> <property name="robi.pass">democoop321</property> 
+			<property name="backup.path">/usr/dbBackup</property> <property name="auto.dayend.hhmm">06:50</property> -->
+
+
+		<!-- <property name="hibernate.connection.password">mfitest0987</property> 
+			<property name="hibernate.connection.url">jdbc:mysql://swostidb.cemk8fv27ubx.ap-southeast-1.rds.amazonaws.com:3306/demo</property> 
+			<property name="hibernate.connection.username">demotest</property> <property 
+			name="hibernate.default_catalog">demo</property> -->
+		<!-- <property name="hibernate.connection.password">123456</property> <property 
+			name="hibernate.connection.url">jdbc:mysql://localhost:3306/test1</property> 
+			<property name="hibernate.connection.username">root</property> <property 
+			name="hibernate.default_catalog">test1</property> -->
+
+
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.search.autoregister_listeners">false</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+
+
+		<!-- <mapping class="com.swosti.migration.sbk.model.TermsAndCondtionsModel"></mapping> -->
+
+
+	</session-factory>
+</hibernate-configuration>
